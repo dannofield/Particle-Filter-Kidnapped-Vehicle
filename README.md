@@ -3,6 +3,9 @@
 
 [image1]: ./images/normaldistribution.jpg "Normal Distribution"
 [image2]: ./images/prediction-equations.png "Prediction Equations"
+[image3]: ./images/coord_translation.png "coord translation"
+[image4]: ./images/transformation_matrix.png "transformation matrix"
+[image5]: ./images/homogeneous_matrix.png "homogeneous matrix"
 ### Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
 ![alt text][image1]
 
@@ -24,3 +27,12 @@ if (fabs(yaw_rate) < 0.0001)
 	predicted_Thetafinal = particle_theta + (yaw_rate * delta_t);
 }
 ```
+# Transformation
+![alt text][image3]
+
+### Homogenous Transformation Matrix
+![alt text][image4]
+
+Matrix multiplication results in:
+
+![alt text][image5]
