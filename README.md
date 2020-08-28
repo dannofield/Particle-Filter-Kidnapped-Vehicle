@@ -8,6 +8,7 @@
 [image5]: ./images/homogeneous_matrix.png "homogeneous matrix"
 [image6]: ./images/sensor_range.png "sensor range"
 [image7]: ./images/nearestNeighbor.png "Nearest Neighbor"
+[image8]: ./images/Multivariate-Gaussian.png "Multivariate Gaussian"
 ### Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
 ![alt text][image1]
 
@@ -46,5 +47,6 @@ Matrix multiplication results in:
 ### Associate observations to predicted landmarks using nearest neighbor algorithm
 ![alt text][image7]
 
-
-
+# Update Weights
+### Multivariate-Gaussian probability density
+![alt text][image8]
