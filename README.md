@@ -7,24 +7,9 @@
 [image4]: ./images/transformation_matrix.png "transformation matrix"
 [image5]: ./images/homogeneous_matrix.png "homogeneous matrix"
 [image6]: ./images/sensor_range.png "sensor range"
-
+[image7]: ./images/nearestNeighbor.png "Nearest Neighbor"
 ### Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
 ![alt text][image1]
-
-
-# Transformation
-![alt text][image3]
-
-### Homogenous Transformation Matrix
-![alt text][image4]
-
-Matrix multiplication results in:
-
-![alt text][image5]
-
-### Filter map landmarks to keep only those which are in the sensor_range
-![alt text][image6]
-
 
 # Prediction Equations
 ![alt text][image2]
@@ -44,3 +29,22 @@ if (fabs(yaw_rate) < 0.0001)
 	predicted_Thetafinal = particle_theta + (yaw_rate * delta_t);
 }
 ```
+
+# Transformation
+![alt text][image3]
+
+### Homogenous Transformation Matrix
+![alt text][image4]
+
+Matrix multiplication results in:
+
+![alt text][image5]
+
+### Filter map landmarks to keep only those which are in the sensor_range
+![alt text][image6]
+
+### Associate observations to predicted landmarks using nearest neighbor algorithm
+![alt text][image7]
+
+
+
