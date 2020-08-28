@@ -6,6 +6,8 @@
 [image3]: ./images/coord_translation.png "coord translation"
 [image4]: ./images/transformation_matrix.png "transformation matrix"
 [image5]: ./images/homogeneous_matrix.png "homogeneous matrix"
+[image6]: ./images/sensor_range.png "sensor range"
+
 ### Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
 ![alt text][image1]
 
@@ -36,3 +38,6 @@ if (fabs(yaw_rate) < 0.0001)
 Matrix multiplication results in:
 
 ![alt text][image5]
+
+### Filter map landmarks to keep only those which are in the sensor_range
+![alt text][image6]
