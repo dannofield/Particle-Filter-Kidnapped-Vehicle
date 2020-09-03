@@ -198,3 +198,22 @@ Our job is to build out the methods in `particle_filter.cpp` until the simulator
 ```
 Success! Your particle filter passed!
 ```
+
+### Documentation
+
+Past, Present, and Future of Simultaneous Localization And Mapping: Towards the Robust-Perception Age [https://arxiv.org/abs/1606.05830](https://arxiv.org/abs/1606.05830)
+
+Navigating the Landscape for Real-time Localisation and Mapping for Robotics and Virtual and Augmented Reality [https://arxiv.org/abs/1808.06352](https://arxiv.org/abs/1808.06352)
+
+Robotic Mapping: A Survey [http://robots.stanford.edu/papers/thrun.mapping-tr.pdf](http://robots.stanford.edu/papers/thrun.mapping-tr.pdf)
+
+Udacity / CarND-Kidnapped-Vehicle-Project [https://github.com/udacity/CarND-Kidnapped-Vehicle-Project](https://github.com/udacity/CarND-Kidnapped-Vehicle-Project)
+
+Kidnapped vehicle project using Particle Filters-Udacity’s Self-driving Car Nanodegree
+
+https://github.com/sohonisaurabh/CarND-Kidnapped-Vehicle-Project
+
+https://medium.com/intro-to-artificial-intelligence/kidnapped-vehicle-project-using-particle-filters-udacitys-self-driving-car-nanodegree-aa1d37c40d49
+
+
+
