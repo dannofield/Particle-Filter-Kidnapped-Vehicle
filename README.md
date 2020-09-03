@@ -16,8 +16,32 @@ A robot has been kidnapped and transported to a new location! Luckily it has a m
 
 In this project we will implement a 2 dimensional particle filter in C++. Our particle filter will be given a map and some initial localization information (analogous to what a GPS would provide). At each time step your filter will also get observation and control data.
 
-### Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
+# Step 1: Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
+
+We initialize a particle filter by initializing particles to Gaussian distribution around first position and all the weights to 1.
+Cpp has the tools to apply a Normal/Gaussian distribution [normal_distribution](http://en.cppreference.com/w/cpp/numeric/random/normal_distribution) using a [default_random_engine](http://www.cplusplus.com/reference/random/default_random_engine/)
+
+Also, for each position received, we will simulate noisy measurement from GPS sensor. This measurement included the x coordinate, y coordinate (both in m) and the theta (orientation) of vehicle in radian. 
+
+This noise is modelled by Gaussian distribution with standard deviation in x, y and theta provided as a part of GPS uncertainty specification.
+
 ![alt text][image1]
+
+```Cpp
+void ParticleFilter::init(double x, double y, double theta, double std[]) {
+	// :
+	default_random_engine random;
+	normal_distribution<double> dist_x(x, std[0]);
+	normal_distribution<double> dist_y(y, std[1]);
+	normal_distribution<double> dist_theta(theta, std[2]);
+	// :	
+	for (int particleIndex = 0; particleIndex < num_particles; particleIndex++)
+    	{
+	  // :
+	  particle.x = dist_x(random);
+	  particle.y = dist_y(random);
+	  article.theta = dist_theta(random);
+```
 
 # Prediction Equations
 ![alt text][image2]
