@@ -76,9 +76,16 @@ if (fabs(yaw_rate) < 0.0001)
 ### Homogenous Transformation Matrix
 ![alt text][image4]
 
+Observations in the car coordinate system can be transformed into map coordinates (xm and ym) by passing car observation coordinates (xc and yc), map particle coordinates (xp and yp), and our rotation angle (-90 degrees) through a homogenous transformation matrix. This homogenous transformation matrix, performs rotation and translation.
+
 Matrix multiplication results in:
 
 ![alt text][image5]
+
+```Cpp
+transformed_obs.x = particle_x + (cos(particle_theta) * observations[j].x) - (sin(particle_theta) * observations[j].y);
+transformed_obs.y = particle_y + (sin(particle_theta) * observations[j].x) + (cos(particle_theta) * observations[j].y);
+```
 
 ### Filter map landmarks to keep only those which are in the sensor_range
 ![alt text][image6]
