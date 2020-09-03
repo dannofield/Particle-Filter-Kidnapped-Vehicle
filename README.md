@@ -91,6 +91,9 @@ transformed_obs.y = particle_y + (sin(particle_theta) * observations[j].x) + (co
 ![alt text][image6]
 
 ### Associate observations to predicted landmarks using nearest neighbor algorithm
+
+We have to match landmark measurements to objects in the real world provided as map landmarks
+
 ![alt text][image7]
 
 ```Cpp
