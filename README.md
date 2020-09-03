@@ -95,7 +95,54 @@ transformed_obs.y = particle_y + (sin(particle_theta) * observations[j].x) + (co
 
 # Update Weights
 ### Multivariate-Gaussian probability density
+
+After we have done the measurement transformations and associations, we need to calculate the final weight of the particle.
+The Multivariate-Gaussian standard deviation is described by our initial uncertainty in the x and y ranges and its association with the landmark's position
+
 ![alt text][image8]
+
+```Cpp
+double sigma_x = std_landmark[0];
+double sigma_y = std_landmark[1];
+
+double sigma_x_2 = pow(sigma_x, 2);
+double sigma_y_2 = pow(sigma_y, 2);
+double normalizer = (1.0/(2.0 * M_PI * sigma_x * sigma_y));
+
+unsigned int k, l;
+
+/*Calculate the weight of particle based on the multivariate Gaussian probability function*/
+for (k = 0; k < transformed_observations.size(); k++)
+{
+	double transformed_observation_x = transformed_observations[k].x;
+	double transformed_observation_y = transformed_observations[k].y;
+	double transformed_observation_id = transformed_observations[k].id;
+	double multivariateGaussianProbability = 1.0;
+
+	for (l = 0; l < predicted_landmarks.size(); l++)
+	{
+		double predicted_landmark_x = predicted_landmarks[l].x;
+		double predicted_landmark_y = predicted_landmarks[l].y;
+		double predicted_landmark_id = predicted_landmarks[l].id;
+		if (transformed_observation_id == predicted_landmark_id)
+		{
+			//Weight for this observation with multivariate 
+			multivariateGaussianProbability = normalizer * 
+			exp(-1.0 * 
+				(
+					(pow((transformed_observation_x - predicted_landmark_x), 2)/(2.0 * sigma_x_2)) + 
+					(pow((transformed_observation_y - predicted_landmark_y), 2)/
+						(2.0 * sigma_y_2))
+				)
+			);
+
+			//Product of this obersvation weight with total
+			particles[i].weight *= multivariateGaussianProbability;
+		}
+	}
+}
+```
+
 
 # Project Results
 ![alt text][image9]
