@@ -19,9 +19,10 @@ In this project we will implement a 2 dimensional particle filter in C++. Our pa
 # Step 1: Normal Distribution (or Gaussian or Gauss or Laplace–Gauss) distribution
 
 We initialize a particle filter by initializing particles to Gaussian distribution around first position and all the weights to 1.
+
 Cpp has the tools to apply a Normal/Gaussian distribution [normal_distribution](http://en.cppreference.com/w/cpp/numeric/random/normal_distribution) using a [default_random_engine](http://www.cplusplus.com/reference/random/default_random_engine/)
 
-Also, for each position received, we will simulate noisy measurement from GPS sensor. This measurement included the x coordinate, y coordinate (both in m) and the theta (orientation) of vehicle in radian. 
+Also, for each position received, we will simulate noisy measurement from GPS sensor. This measurement includes the x coordinate, y coordinate (both in m) and the theta (orientation) of vehicle in radian. 
 
 This noise is modelled by Gaussian distribution with standard deviation in x, y and theta provided as a part of GPS uncertainty specification.
 
@@ -43,7 +44,14 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 	  article.theta = dist_theta(random);
 ```
 
-# Prediction Equations
+# Step 2: Prediction Equations
+
+After initialization, the particle filter gets updated with information of control inputs and time elapsed between time steps. 
+
+The control inputs are nothing but magnitude of velocity (v) and yaw rate (θ).  With this information, the location of each particle at next time step is predicted. 
+
+This is done by using information of control inputs and time elapsed between time steps. Location update is done with the help of formula given below:
+
 ![alt text][image2]
 
 ```Cpp
