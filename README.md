@@ -46,11 +46,11 @@ void ParticleFilter::init(double x, double y, double theta, double std[]) {
 
 # Step 2: Prediction Equations
 
-After initialization, the particle filter gets updated with information of control inputs and time elapsed between time steps. 
+After initialization, the particle filter gets updated with information of control inputs like magnitude of velocity (v) and yaw rate (θ), and time elapsed between steps. 
 
-The control inputs are nothing but magnitude of velocity (v) and yaw rate (θ).  With this information, the location of each particle at next time step is predicted. 
+With this information, the location of each particle at next time step is predicted. 
 
-This is done by using information of control inputs and time elapsed between time steps. Location update is done with the help of formula given below:
+Location update is done with the help of the formulas:
 
 ![alt text][image2]
 
