@@ -93,6 +93,33 @@ transformed_obs.y = particle_y + (sin(particle_theta) * observations[j].x) + (co
 ### Associate observations to predicted landmarks using nearest neighbor algorithm
 ![alt text][image7]
 
+```Cpp
+for (i = 0; i < observations.size(); i++)
+{
+	//Maximum distance can be square root of 2 times the range of sensor.
+	double lowest_dist = sensor_range * sqrt(2);//start with a max distance
+	int closest_landmark_id = -1;
+	double observation_x = observations[i].x;
+	double observation_y = observations[i].y;
+
+	for (j = 0; j < predicted.size(); j++)
+	{
+		double predicted_x = predicted[j].x;
+		double predicted_y = predicted[j].y;
+		int predicted_id = predicted[j].id;
+		double current_dist = dist(observation_x, observation_y, predicted_x, predicted_y);
+		
+		//take the closest measurement as the right measurement 
+		if (current_dist < lowest_dist)
+		{
+			lowest_dist = current_dist;
+			closest_landmark_id = predicted_id;
+		}
+	}
+	observations[i].id = closest_landmark_id;
+}
+```
+
 # Update Weights
 ### Multivariate-Gaussian probability density
 
