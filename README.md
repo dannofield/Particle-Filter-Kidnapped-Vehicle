@@ -218,5 +218,20 @@ https://github.com/sohonisaurabh/CarND-Kidnapped-Vehicle-Project
 
 https://medium.com/intro-to-artificial-intelligence/kidnapped-vehicle-project-using-particle-filters-udacitys-self-driving-car-nanodegree-aa1d37c40d49
 
+See here http://users.isy.liu.se/rt/fredrik/reports/09TAESpftutorial.pdf where theory meets practice in particle filters
+http://www.irisa.fr/aspi/legland/ref/arulampalam02a.pdf
 
+Applying particle filters in robots http://robots.stanford.edu/papers/thrun.pf-in-robotics-uai02.pdf
 
+A gentle introduction to particle filtering http://www.lancaster.ac.uk/pg/turnerl/PartileFiltering.pdf
+
+Particle filters and its applications http://ocw.alfaisal.edu/NR/rdonlyres/Aeronautics-and-Astronautics/16-412JSpring-2005/F9652688-E118-442E-98CE-3013CBEB8F11/0/a5_hso_plnvl_mlr.pdf
+
+Get to understand the different particle filter has with other filters here http://www.dsi.unifi.it/users/chisci/idfric/Nonlinear_filtering_Chen.pdf
+
+Robot mapping with particle filters http://duch.mimuw.edu.pl/~kowaluk/GOBR/slam11-particle-filter.pdf
+https://en.wikipedia.org/wiki/Particle_filter
+
+[Kalman and Particle filters](https://docs.google.com/viewer?url=http%3A%2F%2Fwww.sft.asso.fr%2FLocal%2Fsft%2Fdir%2Fuser-3775%2Fdocuments%2Factes%2FMetti5_School%2FLectures%26Tutorials-Texts%2FText-T10-Orlande.pdf)
+
+[Particle/Kalman Filter for Efficient Robot Localization](https://docs.google.com/viewer?url=http%3A%2F%2Fresearch.ijcaonline.org%2Fvolume106%2Fnumber2%2Fpxc3899554.pdf)
